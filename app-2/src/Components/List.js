@@ -1,15 +1,24 @@
 import React, {Component} from 'react'
 
-const List = () =>{
-    return (
-        <ul>
-            <h2>Cookies</h2>
-            <h2>Ice Cream</h2>
-            <h2>Gelato</h2>
-            <h2>Cake</h2>
-            <h2>Candy</h2>
-        </ul>
-    )
+class List extends Component{
+    constructor(){
+        super()
+        this.state={
+            list: ['Cookies', 'Ice Cream', 'Gelato', 'Cake', 'Candy']
+        }
+    }
+
+    DisplayList=()=>{
+        
+    }
+    render(){
+        return (
+                this.state.list.map((element, index)=>{
+                    return(<h2 key={index}>{element}</h2>)
+                }
+            )
+        )
+    }
 }
 
 export default List
